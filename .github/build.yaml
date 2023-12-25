@@ -1,0 +1,41 @@
+name: Various Checks
+
+permissions:
+  contents: read
+  pull-requests: write
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    paths-ignore:
+      - "README.md"
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Load cargo cache
+        uses: actions/cache@v3
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: cargo-${{ hashFiles('**/Cargo.lock') }}
+      - name: Set up Rust toolchain
+        run: |
+          rustup set profile minimal
+          rustup update stable
+          rustup update nightly
+      - name: Run build
+        run: cargo build --all --release
+      - name: Run build anyhow
+        run: cargo build --features anyhow --release
+      - name: Run build eyre
+        run: cargo build --features eyre --release
+      - name: Run build examples
+        run: cargo build --examples

@@ -1,0 +1,14 @@
+[package]
+name = "rocket-errors"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { version = "1", optional = true }
+eyre = { version = "0.6", optional = true }
+rocket = "0.5"
+
+[features]
+default = ["anyhow"]
+anyhow = ["dep:anyhow"]
+eyre = ["dep:eyre"]
