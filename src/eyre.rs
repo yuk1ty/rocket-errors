@@ -1,8 +1,11 @@
 use rocket::response::{self, Responder};
 use rocket::Request;
 
+/// A type alias with [`EyreReport`] to use `eyre::Result` in Rocket framework.
 pub type Result<T, E = EyreReport> = std::result::Result<T, E>;
 
+/// A wrapper of `eyre::Report` to be able to make use of `eyre` in Rocket framework.
+/// [`rocket::response::Responder`] is implemented to this type.
 #[derive(Debug)]
 pub struct EyreReport(pub eyre::Report);
 
