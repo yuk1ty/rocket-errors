@@ -12,3 +12,11 @@ rocket = "0.5"
 default = ["anyhow"]
 anyhow = ["dep:anyhow"]
 eyre = ["dep:eyre"]
+
+[[example]]
+name = "anyhow-rocket"
+path = "examples/anyhow_rocket.rs"
+
+[[example]]
+name = "eyre-rocket"
+path = "examples/eyre_rocket.rs"
