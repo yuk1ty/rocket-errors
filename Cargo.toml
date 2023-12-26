@@ -8,6 +8,9 @@ anyhow = { version = "1", optional = true }
 eyre = { version = "0.6", optional = true }
 rocket = "0.5"
 
+[dev-dependencies]
+thiserror = "1"
+
 [features]
 default = ["anyhow"]
 anyhow = ["dep:anyhow"]
@@ -20,3 +23,7 @@ path = "examples/anyhow_rocket.rs"
 [[example]]
 name = "eyre-rocket"
 path = "examples/eyre_rocket.rs"
+
+[[example]]
+name = "handling"
+path = "examples/handling.rs"
