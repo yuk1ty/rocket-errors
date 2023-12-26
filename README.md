@@ -55,7 +55,7 @@ async fn main() -> eyre::Result<()> {
 `anyhow` is turned on by default. You just need to add a dependency to this crate:
 
 ```
-rocket-errors = "0.1"
+rocket-errors = { version = "0.1" }
 ```
 
 ### `eyre`
