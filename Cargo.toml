@@ -1,7 +1,14 @@
 [package]
 name = "rocket-errors"
+authors = ["yuk1ty <yuki.multiplus@gmail.com>"]
+description = "A library for handling errors with anyhow and eyre in Rocket applications."
+readme = "README.md"
+repository = "https://github.com/yuk1ty/rocket-errors"
+license = "MIT"
 version = "0.1.0"
 edition = "2021"
+keywords = ["rocket", "error-handling"]
+categories = ["web-programming::http-server", "web-programming::rocket"]
 
 [dependencies]
 anyhow = { version = "1", optional = true }
